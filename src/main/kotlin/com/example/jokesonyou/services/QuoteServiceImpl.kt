@@ -6,9 +6,8 @@ import org.springframework.stereotype.Service
 
 @Primary
 @Service
-class QuoteServiceImpl : QuoteService {
-
-    val chuckNorrisQuotes: ChuckNorrisQuotes = ChuckNorrisQuotes()
+class QuoteServiceImpl(val chuckNorrisQuotes: ChuckNorrisQuotes) : QuoteService {
 
     override fun getJoke() = chuckNorrisQuotes.randomQuote
+
 }
